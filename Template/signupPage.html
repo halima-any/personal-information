@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #1b1b1b, #0d0d0e);
+            background-image: url(../static/ipo.png) ;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vb;
+            margin: 0;
+            color: #fff;
+        }
+        
+        .container {
+            background-color: rgba(98, 63, 226, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            height: 100vb;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0f0e0e;
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #0a0909;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus {
+            border-color: #0707c7;
+            outline: none;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5e5ee7;
+            color: rgb(5, 5, 5);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        button:hover {
+            background-color: #7474e9;
+            transform: scale(1.05);
+        }
+        
+        .error {
+            color: rgb(95, 206, 240);
+            font-size: 0.8em;
+            display: none;
+        }
+        .container{
+            background-image: url();
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Signup</h2>
+        <form action="" id="signupForm" method="POST" enctype="multipart/form-data">
+            
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            
+            <label for="password">Confirm Password:</label>
+            <input type="password" id="password" name="Confirm_password" required>
+
+            <label for="password">Profile Pic</label>
+            <input type="file" id="password" name="Profile_Pic" required>
+
+            <label for="password">Contact Number</label>
+            <input type="text" id="password" name="contact_no" required>
+
+
+
+            <label for="user_type">User Type:</label>
+            <select id="gender_type" name="gender_type" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+            </select>
+
+            <button type="submit">Signup</button>
+            
+            <a href=" {% url 'signInPage' %} "> Already Have an Account </a>
+        </form>
+    </div>
+
+    
+</body>
+</html>

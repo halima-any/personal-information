@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Styled Navbar</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #030303; /* Updated to a modern green */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: rgb(246, 246, 252);
+            text-align: center;
+            padding: 14px 20px; /* Slightly increased padding for better spacing */
+            text-decoration: none;
+            font-weight: bold; /* Bolder text for better readability */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover transition */
+        }
+
+        /* Hover effect for inactive links */
+        li a:hover:not(.active) {
+            background-color: #60f760; /* Lighter green on hover */
+            transform: translateY(-2px); /* Slight raise effect */
+        }
+
+        /* Style for the active link */
+        .active {
+            background-color: #050505; /* Darker green for the active link */
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            ul {
+                display: flex;
+                flex-direction: column;
+            }
+
+            li {
+                float: none;
+                width: 100%;
+            }
+
+            li a {
+                text-align: left;
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar included -->
+    {% include 'navbar.html' %}
+
+    <!-- Main content block -->
+    {% block body %}
+    {% endblock body %}
+    
+</body>
+</html>
